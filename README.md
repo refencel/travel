@@ -11,8 +11,6 @@ npm install
 
 npm run dev
 
-npm run build
-
 ```
 
 ## 部分截图
@@ -26,5 +24,10 @@ npm run build
 
 ## 技术栈
 
-vue2 + webpack + ES6 + scss + 响应式 + 瀑布流
+vue2 + axios + webpack + ES6 + scss + 响应式 + 瀑布流
+
+
+## 关于 数据接口 的说明
+
+本项目数据使用的是[easy-mock](https://easy-mock.com/)模拟出来的真实接口
 
