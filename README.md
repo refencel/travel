@@ -22,6 +22,9 @@ npm run dev
 ## 响应式截图
 <img src="https://github.com/refencel/travel/blob/master/screenshots/respond.gif" width="419"/>
 
+## 加载图
+<img src="https://github.com/refencel/travel/blob/master/screenshots/load.gif" width="270"/>
+
 ## 技术栈
 
 vue2 + axios + webpack + ES6 + scss + 响应式 + 瀑布流
