@@ -1,6 +1,7 @@
 # 前言
 
-这个项目只是自己工作之余的时间用来练习代码的小项目，仅供学习。
+这个项目只是自己工作之余的时间用来练习代码的小项目，仅供学习。<br>
+在线运行地址等后面再发上来。
 
 ## 项目运行
 
@@ -18,6 +19,9 @@ npm run build
 
 ## 弹框截图
 <img src="https://github.com/refencel/travel/blob/master/screenshots/modal.gif" width="419"/>
+
+## 响应式截图
+<img src="https://github.com/refencel/travel/blob/master/screenshots/respond.gif" width="419"/>
 
 ## 技术栈
 
