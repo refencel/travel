@@ -16,7 +16,10 @@ npm run build
 ## 部分截图
 <img src="https://github.com/refencel/travel/blob/master/screenshots/home.jpeg" width="100%"/>
 
+## 弹框截图
+<img src="https://github.com/refencel/travel/blob/master/screenshots/modal.gif" width="419"/>
+
 ## 技术栈
 
-vue2 + webpack + ES6 + scss
+vue2 + webpack + ES6 + scss + 响应式 + 瀑布流
 
