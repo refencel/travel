@@ -14,7 +14,7 @@ npm run build
 ```
 
 ## 部分截图
-<img src="https://github.com/bailicangdu/vue2-elm/blob/master/screenshots/ewm.png" width="250" height="250"/>
+<img src="https://github.com/refencel/travel/blob/master/screenshots/home.jpeg" width="100%"/>
 
 ## 技术栈
 
