@@ -1,6 +1,7 @@
 # travel
 
 这个项目只是自己工作之余的时间用来练习代码的小项目，仅供学习。
+里面的图片素材都是我自己从网上找的，网页的设计图也是直接从网上下载，然后自己切图转化成静态页面。
 
 ## Build Setup
 
@@ -18,4 +19,3 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
