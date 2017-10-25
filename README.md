@@ -1,6 +1,6 @@
 # travel
 
-> A Vue.js project
+这个项目只是自己工作之余的时间用来练习代码的小项目，仅供学习。
 
 ## Build Setup
 
