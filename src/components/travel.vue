@@ -40,7 +40,7 @@
 		</div>
 
 		<!-- 瀑布区域 -->
-		<div class="waterfall" ref="water">
+		<div class="waterfall" ref="water" :style="style">
 			<figure class="hook" v-for="item in fall">
 				<div class="text-con" v-show="item.title">
 					<h1>{{item.title.t1}}</h1>
@@ -67,7 +67,10 @@ import load from './loading.vue'
 export default {
 	data() {
 		return {
+			maxH: 0,
+			scrollDisable: false,
 			fall: [],
+			first: [],
 			layer: false,
 			loadDone: true,
 			children: [],
@@ -76,10 +79,15 @@ export default {
 			mainMiddle: []
 		}
 	},
+	computed: {
+		style() {
+			return {
+				height: `${this.maxH}px`,
+			}
+		}
+	},
 	components: {
 		modal,load
-	},
-	computed: {
 	},
 	methods: {
 		// 获取最小值index方法
@@ -107,9 +115,14 @@ export default {
 		_getFall() {
 			this.$http.get('waterfall')
 			.then((res)=>{
-				this.fall = res.data.data;
-				this._waterInit();
+				this.first = res.data.data;
 			})
+		},
+		loadMore() {
+			this.scrollDisable = true;
+			this.fall = [...this.fall, ...this.first];
+			this._waterInit();
+			this.scrollDisable = false;
 		},
 		_waterInit() {
 			// 渲染图片
@@ -127,6 +140,7 @@ export default {
 				for(let i = 0; i < figure.length; i++){
 					// 获取数组中最小的值
 					let minH = Math.min.apply(null,hArr);
+
 					// 获取最小值的index
 					let minI = this.minIndex(hArr,minH);
 
@@ -136,6 +150,7 @@ export default {
 					figure[i].style.left = (rowWidth * minI) +`px`;
 					hArr[minI] += figure[i].offsetHeight + 20;
 				}
+				this.maxH = Math.max.apply(null,hArr);
 			},170)
 		}
 	},
@@ -146,16 +161,27 @@ export default {
 		// 获取瀑布流图片
 		this._getFall();
 
-		// 检测窗口大小变化
-		window.onresize = ()=>{
+		// 监听窗口大小变化
+		window.addEventListener('resize', ()=>{
 			this._waterInit();
-		}
+		})
+
+		// 监听滚动条
+		window.addEventListener('scroll', ()=> {
+			if(document.documentElement.scrollTop + window.innerHeight >= document.body.clientHeight) {
+				if(!this.scrollDisable){
+					this.loadMore();
+				}
+			}
+		})
 	}
 }
 </script>
 
 <style lang="scss">
 	.container{
+		position: relative;
+		overflow: hidden;
 		max-width: 1190px;
 		margin: 60px auto;
 		padding: 0 10px;
